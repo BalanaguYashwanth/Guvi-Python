@@ -1,0 +1,6 @@
+a=input()
+b=a.split()
+c=list(map(int,b))
+d=tuple(c)
+e=set(d)
+print(e)
