@@ -1,0 +1,18 @@
+c=[];
+count=0;
+count1=0
+a=int(input("enter the element:"))
+for i in range(0,a):
+    c.append(int(input()))
+
+for i in range(0,a):
+    if(c[i]%2==0 or c[i]%3==0 or c[i]%5==0):
+        count1=count1+1
+    else:
+        count=count+1;
+
+if(count==a):
+    print("0")
+if(count1==a):
+    print("1")
+    
