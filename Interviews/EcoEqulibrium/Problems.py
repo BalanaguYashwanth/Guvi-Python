@@ -17,3 +17,12 @@ next(y) //2
 
 ------------------------------------
 
+How decoratos internally will perform in flask 
+
+------------------------------------
+
+l=[1,2,3] 
+details=(a,b,l)
+
+l[2]='hey' # whether the l will change the value
+print(details)
