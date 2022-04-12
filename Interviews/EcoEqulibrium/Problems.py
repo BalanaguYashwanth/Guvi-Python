@@ -29,7 +29,7 @@ print(details)
 
 ------------------------------------
 
-Deign database many to many 
+Deign database many to many relationships
 
 ------------------------------------
 
