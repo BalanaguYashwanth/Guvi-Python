@@ -5,6 +5,11 @@ b.append(a) #[1,2,4,[9,8,7]]
 b.extend(a) #[1,2,4,9,8,7]
 ------------------------------------
 
+what are iterators and decorators
+
+-----------------------------------
+
+
 def hello(test_list) :
     for i in range(test_list,-1,-1):
       yield i
