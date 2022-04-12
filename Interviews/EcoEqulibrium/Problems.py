@@ -26,3 +26,11 @@ details=(a,b,l)
 
 l[2]='hey' # whether the l will change the value
 print(details)
+
+------------------------------------
+
+Deign database many to many 
+
+------------------------------------
+
+
