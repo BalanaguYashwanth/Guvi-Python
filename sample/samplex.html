@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        function change() {
+            let txt =
+                "Policy Number | PolicyOutput.PolicyNumber, Loc Number1 | RiskOutput.LocationNumber, Loc Number2 | RiskOutput.LocationNumber, Loc Number3 | RiskOutput.LocationNumber, Bldg Number1 | RiskOutput.BuildingNumber, Bldg Number2 | RiskOutput.BuildingNumber, BldgNumber3 | RiskOutput.BuildingNumber, Bldg Causes of Loss1 | RiskOutput.CauseOfLoss, Bldg Causes of Loss2 | RiskOutput.CauseOfLoss, Bldg Causes of Loss3 | RiskOutput.CauseOfLoss, Util Loss-Total Lmt1 | UtilServicesInfo.UtilityServicesLimit, Util Loss-TotalLmt2 | UtilServicesInfo.UtilityServicesLimit, Util Loss-Total Lmt3 | UtilServicesInfo.UtilityServicesLimit, Util Loss-Water Ind1 | RiskPrivate.UtilityServicesWaterSupply, Util Loss-Water Ind2 | RiskPrivate.UtilityServicesWaterSupply, Util Loss-Water Ind3| RiskPrivate.UtilityServicesWaterSupply, Util Loss-Commw-Overhead Ind1 | RiskPrivate.UtilityServicesCommunicationSupply, Util Loss-Commw-Overhead Ind2 | RiskPrivate.UtilityServicesCommunicationSupply, Util Loss-Commw-Overhead Ind3 | RiskPrivate.UtilityServicesCommunicationSupply,Util Loss-Comm No Overhead Ind1 | RiskPrivate.UtilityServicesCommunicationSupply, Util Loss-Comm No Overhead Ind2 | RiskPrivate.UtilityServicesCommunicationSupply, Util Loss-Comm No Overhead Ind3 | RiskPrivate.UtilityServicesCommunicationSupply, UtilLoss-Power-w-OverheadInd1 | RiskPrivate.UtilityServicesPowerSupply, UtilLoss-Power-w-Overhead Ind2 | RiskPrivate.UtilityServicesPowerSupply, UtilLoss-Power-w-Overhead Ind3 | RiskPrivate.UtilityServicesPowerSupply, UtilLoss-Power-No Overhead Ind1 | RiskPrivate.UtilityServicesPowerSupply,UtilLoss-Power-No Overhead Ind2 | RiskPrivate.UtilityServicesPowerSupply, UtilLoss-Power-No Overhead Ind3 | RiskPrivate.UtilityServicesPowerSupply, Util Waste-Water Ind1 | RiskPrivate.UtilityServicesWasteRemoval, Util Waste-Water Ind2 | RiskPrivate.UtilityServicesWasteRemoval,Util Waste-Water Ind3 | RiskPrivate.UtilityServicesWasteRemoval";
+
+            let all = txt.split(",");
+
+            var x;
+            let arr = [];
+            let arr1 = [];
+            for (x in all) {
+                arr.push(all[x].split("|")[0]);
+                arr1.push(all[x].split("|")[1]);
+            }
+
+            axios
+                .post(
+                    "https://sheet.best/api/sheets/8eaa9c7a-1e00-4f88-815d-983105cd6a35", {
+                        mergefield: arr,
+                        mapfield: arr1,
+                    }
+                )
+                .then((res) => console.log(res))
+                .catch((err) => console.log(err));
+        }
+    </script>
+</head>
+
+<body>
+    <p>done1</p>
+
+    <button onclick="change()">click</button>
+</body>
+
+</html>
+
+Policy Number | PolicyOutput.PolicyNumber, Named Ins | AccountInput.Name, Date-End Effective | FormsPrivate.EndorsementEffectiveDate, UIM Occur Lmt | LineStateUMDefaultsOutputNonShredded.DefaultUIMCSLLimit, Policy Number | PolicyOutput.PolicyNumber, Named
+Ins | AccountInput.Name, Date-End Effective | FormsPrivate.EndorsementEffectiveDate, UM Occur Lmt | LineStateUMDefaultsOutputNonShredded.DefaultUMBICSLLimit
